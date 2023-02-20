@@ -1,4 +1,5 @@
 *.elc
+ido.last
 auto-save-list
 emacs-user-init.el
 /elpa
