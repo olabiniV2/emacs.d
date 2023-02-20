@@ -37,7 +37,7 @@
 ;; (set-current-theme 'monokai-alt)
 ;; (set-current-theme 'monokai-pro)
 ;; (set-current-theme 'monokai)
-(set-current-theme 'zenburn)
-
+;; (set-current-theme 'zenburn)
+(set-current-theme 'ola-bini)
 
 (provide 'emacs-looks)
