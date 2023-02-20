@@ -30,8 +30,8 @@
 (auto-mode "\\.rake$" 'ruby-mode)
 (auto-mode "\\.spec$" 'ruby-mode)
 (auto-mode "\\.sql$" 'sql-mode)
-(auto-mode "\\.jad$" 'jde-mode)
-(auto-mode "\\.java$" 'jde-mode)
+;; (auto-mode "\\.jad$" 'jde-mode)
+;; (auto-mode "\\.java$" 'jde-mode)
 (auto-mode "\\.py$" 'python-mode)
 (auto-mode "\\.erl$" 'erlang-mode)
 (auto-mode "\\.css$" 'css-mode)
@@ -55,6 +55,7 @@
 (auto-mode "\\.feature$" 'feature-mode)
 (auto-mode "\\.pjs$" 'processing-mode)
 (auto-mode "\\.scala$" 'scala-mode)
+(auto-mode ".*mutt.*" 'message-mode)
 
 (add-to-list 'magic-mode-alist '("<＼＼?xml " . nxml-mode))
 
