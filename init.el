@@ -11,6 +11,14 @@
           "~/.emacs.d/site-lisp/ruby-dev.el"
           )) load-path))
 
+(setq custom-theme-load-path
+      (append
+       (mapcar
+        'expand-file-name
+        '(
+          "~/.emacs.d/site-lisp/own"
+          )) custom-theme-load-path))
+
 (setq custom-file (expand-file-name "~/.emacs.d/main/emacs-custom.el"))
 
 (require 'emacs-custom)
