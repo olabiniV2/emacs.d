@@ -1,6 +1,6 @@
 (add-hook 'ruby-mode-hook
-          '(lambda ()
-            (ruby-electric-mode t)
+          #'(lambda ()
+;            (ruby-electric-mode t)
             (define-key ruby-mode-map (kbd "<f1>") 'ri)
             (define-key ruby-mode-map "\M-\C-i" 'ri-ruby-complete-symbol)
             (define-key ruby-mode-map (kbd "<f5>") 'ri-ruby-show-args)
@@ -11,7 +11,7 @@
             ) t)
 
 (add-hook 'ruby-mode-hook
-          '(lambda ()
+          #'(lambda ()
             (if (string-match "_spec\\.rb$" (buffer-name))
                 (progn
                   (rspec-mode t)
@@ -19,6 +19,8 @@
                   (define-key rspec-mode-map "\M-\C-i" 'ri-ruby-complete-symbol)
                   (define-key rspec-mode-map (kbd "<f5>") 'ri-ruby-show-args)
                   (define-key rspec-mode-map [?\C-/] 'comment-or-uncomment-region)))))
+
+(add-hook 'ruby-mode-hook 'turn-on-ruby-dev)
 
 (defun ruby-find-tags-file (dir)
   (let* ((directory-sep-char ?/)
@@ -31,19 +33,19 @@
               (ruby-find-tags-file (expand-file-name ".." dir)))))))
 
 (add-hook 'io-mode-hook
-          '(lambda ()
+          #'(lambda ()
             (tempo-use-tag-list 'io-tempo-tags)
             ) t)
 
 (add-hook 'jde-mode-hook
-          '(lambda ()
+          #'(lambda ()
             (tempo-use-tag-list 'java-tempo-tags)
             ) t)
 
 (mapc (lambda (h)
-        (add-hook h '(lambda ()
+        (add-hook h #'(lambda ()
                       (font-lock-mode t)) t)
-        (add-hook h '(lambda ()
+        (add-hook h #'(lambda ()
                       (local-set-key [tab] 'indent-or-complete)
                       (local-set-key [?\C-+] 'fontize-increase-font-size)
                       (local-set-key [?\C--] 'fontize-decrease-font-size)
@@ -62,6 +64,8 @@
 
 (add-hook 'org-mode-hook (lambda ()
                            (auto-fill-mode 1)))
+
+(add-hook 'message-mode-hook 'auto-fill-mode 1)
 
 (add-hook 'comint-output-filter-functions 'comint-strip-ctrl-m)
 (add-hook 'comint-output-filter-functions 'shell-strip-ctrl-m nil t)
@@ -147,8 +151,7 @@
     ))
 
 (defun local-go-mode-hooks ()
-  (set-local-envs)
-  (go-eldoc-setup)
+;  (set-local-envs)
   (setq gofmt-command "goimports")
   (add-hook 'before-save-hook 'gofmt-before-save)
   (local-set-key (kbd "M-.") 'godef-jump)
@@ -163,6 +166,7 @@
 (defun local-post-mode-hooks ()
   (set (make-local-variable 'fill-column) 70)
   )
+
 (add-hook 'go-mode-hook 'local-go-mode-hooks)
 
 (add-hook 'post-mode-hook 'local-post-mode-hooks)
