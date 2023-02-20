@@ -34,9 +34,6 @@
 
 (defalias 'qrr 'query-replace-regexp)
 
-(defadvice save-buffers-kill-emacs (before kill-processes (arg) activate)
-  (mapc 'process-kill-without-query (process-list)))
-
 (defun try-complete-abbrev (old)
   (if (expand-abbrev) t nil))
 
