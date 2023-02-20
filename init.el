@@ -1,15 +1,15 @@
 (setq load-path
-      (remove "/usr/local/share/emacs/24.5/lisp/org"
-              (append
-               (mapcar
-                'expand-file-name
-                '(
-                  "~/.emacs.d/main"
-                  "~/.emacs.d/site-lisp/jde/lisp"
-                  "~/.emacs.d/site-lisp/downloaded"
-                  "~/.emacs.d/site-lisp/own"
-                  "~/.emacs.d/site-lisp/erc-sasl"
-                  )) load-path)))
+      (append
+       (mapcar
+        'expand-file-name
+        '(
+          "~/.emacs.d/main"
+;         "~/.emacs.d/site-lisp/jde/lisp"
+          "~/.emacs.d/site-lisp/downloaded"
+          "~/.emacs.d/site-lisp/own"
+          "~/.emacs.d/site-lisp/erc-sasl"
+          "~/.emacs.d/site-lisp/ruby-dev.el"
+          )) load-path))
 
 (setq custom-file (expand-file-name "~/.emacs.d/main/emacs-custom.el"))
 
@@ -18,7 +18,7 @@
 (require 'emacs-require)
 (require 'emacs-vars)
 (require 'emacs-automode)
-(require 'emacs-jde)
+;(require 'emacs-jde)
 (require 'emacs-functions)
 (require 'emacs-hooks)
 (require 'emacs-keys)
@@ -33,4 +33,5 @@
 (load "emacs-user-init" t)
 (put 'downcase-region 'disabled nil)
 (server-start)
-(color-theme-ola-dark)
+;(color-theme-ola-dark)
+(ido-mode 1)
