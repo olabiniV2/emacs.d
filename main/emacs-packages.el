@@ -16,7 +16,7 @@
                      clojure-test-mode
                      clojurescript-mode
                      coffee-mode
-                     color-theme
+                     color-theme-modern
                      command-t
                      crontab-mode
                      csharp-mode
@@ -49,9 +49,6 @@
                      fuel
                      full-ack
                      fullscreen-mode
-                     git-blame
-                     git-commit-mode
-                     git-rebase-mode
                      github-clone
                      gitignore-mode
                      go-mode
@@ -74,7 +71,6 @@
                      less-css-mode
                      levenshtein
                      magit
-                     malabar-mode
                      markdown-mode
                      markdown-mode+
                      markup-faces
@@ -82,7 +78,6 @@
                      minitest
                      mmm-mode
                      multi-term
-                     muttrc-mode
                      nodejs-repl
                      omnisharp
                      org
@@ -105,12 +100,10 @@
                      rainbow-mode
                      rbenv
                      rhtml-mode
-                     rinari
                      rspec-mode
                      ruby-additional
                      ruby-block
                      ruby-compilation
-                     ruby-dev
                      ruby-electric
                      ruby-end
                      ruby-hash-syntax
@@ -123,7 +116,6 @@
                      s
                      sass-mode
                      scala-mode
-                     scala-mode2
                      scss-mode
                      shell-here
                      slime
@@ -156,12 +148,27 @@
                      github-clone
                      go-autocomplete
                      go-eldoc
+
+                     age
+                     git-modes
+                     websocket
+                     web-server
+
+                     go-rename
+                     go-tag
                      ))
 
-(setq package-archives '(("elpa" . "http://tromey.com/elpa/")
-                         ("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")))
+(setq package-archives '(
+                         ("melpa" . "https://melpa.org/packages/")
+;                         ("melpa-stable" . "https://stable.melpa.org/packages/")
+
+;                         ("elpa" . "http://tromey.com/elpa/")
+                         ("gnu" . "https://elpa.gnu.org/packages/")
+;                         ("melpa-stable" . "https://stable.melpa.org/packages/")
+;                         ("melpa" . "http://melpa.milkbox.net/packages/")
+;                         ("marmalade" . "http://marmalade-repo.org/packages/")
+;                         ("melpa" . "http://melpa.milkbox.net/packages/")
+                         ))
 
 (package-initialize)
 
