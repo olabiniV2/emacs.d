@@ -55,7 +55,6 @@
 (auto-mode "\\.feature$" 'feature-mode)
 (auto-mode "\\.pjs$" 'processing-mode)
 (auto-mode "\\.scala$" 'scala-mode)
-(auto-mode ".*mutt.*" 'message-mode)
 
 (add-to-list 'magic-mode-alist '("<＼＼?xml " . nxml-mode))
 

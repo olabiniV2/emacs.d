@@ -26,4 +26,6 @@
 (autoload 'set-local-envs "local-env" nil t)
 (autoload 'turn-on-ruby-dev "ruby-dev" nil t)
 
+(require 'post)
+
 (provide 'emacs-require)

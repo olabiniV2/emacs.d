@@ -65,8 +65,6 @@
 (add-hook 'org-mode-hook (lambda ()
                            (auto-fill-mode 1)))
 
-(add-hook 'message-mode-hook 'auto-fill-mode 1)
-
 (add-hook 'comint-output-filter-functions 'comint-strip-ctrl-m)
 (add-hook 'comint-output-filter-functions 'shell-strip-ctrl-m nil t)
 (add-hook 'comint-output-filter-functions 'comint-watch-for-password-prompt nil t)
