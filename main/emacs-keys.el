@@ -41,6 +41,11 @@
 
 (define-key text-mode-map [tab] 'indent-or-complete)
 
+(add-hook 'org-mode-hook
+          #'(lambda ()
+              (define-key org-mode-map [tab] 'org-cycle)
+            ) t)
+
 (global-set-key [?\C-+] 'fontize-increase-font-size)
 (global-set-key [?\C--] 'fontize-decrease-font-size)
 (global-set-key [?\M-+] 'fontize-next-font)
@@ -49,7 +54,7 @@
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 
-(global-set-key [f9] '(lambda () (interactive) (org-todo-list nil) (enlarge-window 2000)))
+(global-set-key [f9] #'(lambda () (interactive) (org-todo-list nil) (enlarge-window 2000)))
 
 (global-set-key (kbd "C-c S")
                 (lambda ()
